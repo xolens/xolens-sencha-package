@@ -2,7 +2,7 @@
     /**
      * The name of the package.
      */
-    "name": "Xolens",
+    "name": "xolens",
 
     "sencha": {
         /**
@@ -37,7 +37,7 @@
          *
          *    "toolkit": "classic",
          */
-        "toolkit": "",
+        "toolkit": "classic",
 
          /**
           * The author of the package.
@@ -45,17 +45,17 @@
           * Required only if you are distributing this package through a Sencha Cmd repository,
           * in which case it should match the name you assign to your local package repository.
           */
-        "creator": "anonymous",
+        "creator": "Xolens",
 
         /**
          * A summarized description of this package.
          */
-        "summary": "Short summary",
+        "summary": "Xolens app's base sencha package.",
 
         /**
          * A detailed description of this package.
          */
-        "detailedDescription": "Long description of package",
+        "detailedDescription": "Xolens app's base sencha package.",
 
         /**
          * The package version.
@@ -108,6 +108,8 @@
          *
          *     "theme": "ext-theme-classic",
          */
+
+        "theme": "ext-theme-neptune",
 
         /**
          * Sass configuration properties.
@@ -238,6 +240,7 @@
          *
          *     "framework": "ext",
          */
+         "framework": "ext",
 
         /**
          * Packages can require other packages in the same way that applications can require
@@ -264,6 +267,8 @@
          *          }
          *      }
          */
-        "requires": []
+        "requires": [
+            "ux","font-awesome"
+        ]
     }
 }
