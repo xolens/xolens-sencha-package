@@ -1,59 +1,14 @@
 Ext.define('Xolens.module.enquiry.rsc.Form', {
     singleton: true,
 
-        group: {
-            subtitle: 'GROUPS',
-            iconCls: 'x-fa fa-send',
-            prefilled: [],
-            fillables: ['id', 'name', 'description', ],
-            createUrl: Xolens.module.enquiry.rsc.Api.group.storeUrl,
-            updateUrl: Xolens.module.enquiry.rsc.Api.group.singleUrl,
-            fieldTypes: ['hiddentoken', 'hiddenid', 'rName', 'bDescription', ]
-        },
-        form: {
-            subtitle: 'FORMS',
-            iconCls: 'x-fa fa-send',
-            prefilled: [],
-            fillables: ['id', 'name', 'description', ],
-            createUrl: Xolens.module.enquiry.rsc.Api.form.storeUrl,
-            updateUrl: Xolens.module.enquiry.rsc.Api.form.singleUrl,
-            fieldTypes: ['hiddentoken', 'hiddenid', 'rName', 'bDescription', ]
-        },
         field: {
             subtitle: 'FIELDS',
             iconCls: 'x-fa fa-send',
             prefilled: [],
-            fillables: ['id', 'type', 'name', 'display_text', 'required', 'value_list', 'description', ],
+            fillables: ['id', 'name', 'type', 'display_text', 'required', 'value_list', 'description', ],
             createUrl: Xolens.module.enquiry.rsc.Api.field.storeUrl,
             updateUrl: Xolens.module.enquiry.rsc.Api.field.singleUrl,
-            fieldTypes: ['hiddentoken', 'hiddenid', 'rType', 'rName', 'rDisplayText', 'rRequired', 'bValueList', 'bDescription', ]
-        },
-        participant: {
-            subtitle: 'PARTICIPANTS',
-            iconCls: 'x-fa fa-send',
-            prefilled: [],
-            fillables: ['id', 'name', 'description', ],
-            createUrl: Xolens.module.enquiry.rsc.Api.participant.storeUrl,
-            updateUrl: Xolens.module.enquiry.rsc.Api.participant.singleUrl,
-            fieldTypes: ['hiddentoken', 'hiddenid', 'rName', 'bDescription', ]
-        },
-        groupparticipant: {
-            subtitle: 'GROUPPARTICIPANTS',
-            iconCls: 'x-fa fa-send',
-            prefilled: [],
-            fillables: ['id', 'group_id', 'group', ],
-            createUrl: Xolens.module.enquiry.rsc.Api.groupparticipant.storeUrl,
-            updateUrl: Xolens.module.enquiry.rsc.Api.groupparticipant.singleUrl,
-            fieldTypes: ['hiddentoken', 'hiddenid', 'rSelectGroup', ]
-        },
-        tablefield: {
-            subtitle: 'TABLEFIELDS',
-            iconCls: 'x-fa fa-send',
-            prefilled: [],
-            fillables: ['id', 'name', 'max_records', 'description', 'field_id', 'field', ],
-            createUrl: Xolens.module.enquiry.rsc.Api.tablefield.storeUrl,
-            updateUrl: Xolens.module.enquiry.rsc.Api.tablefield.singleUrl,
-            fieldTypes: ['hiddentoken', 'hiddenid', 'rName', 'rMaxRecords', 'bDescription', 'rSelectField', ]
+            fieldTypes: ['hiddentoken', 'hiddenid', 'rName', 'rType', 'rDisplayText', 'rRequired', 'bValueList', 'bDescription', ]
         },
         section: {
             subtitle: 'SECTIONS',
@@ -64,23 +19,32 @@ Ext.define('Xolens.module.enquiry.rsc.Form', {
             updateUrl: Xolens.module.enquiry.rsc.Api.section.singleUrl,
             fieldTypes: ['hiddentoken', 'hiddenid', 'rName', 'bDescription', ]
         },
+        form: {
+            subtitle: 'FORMS',
+            iconCls: 'x-fa fa-send',
+            prefilled: [],
+            fillables: ['id', 'name', 'description', 'primary_section_id', 'primary_section', ],
+            createUrl: Xolens.module.enquiry.rsc.Api.form.storeUrl,
+            updateUrl: Xolens.module.enquiry.rsc.Api.form.singleUrl,
+            fieldTypes: ['hiddentoken', 'hiddenid', 'rName', 'bDescription', 'rSelectPrimarySection', ]
+        },
+        tablefield: {
+            subtitle: 'TABLEFIELDS',
+            iconCls: 'x-fa fa-send',
+            prefilled: [],
+            fillables: ['id', 'name', 'max_records', 'description', 'field_id', 'field', ],
+            createUrl: Xolens.module.enquiry.rsc.Api.tablefield.storeUrl,
+            updateUrl: Xolens.module.enquiry.rsc.Api.tablefield.singleUrl,
+            fieldTypes: ['hiddentoken', 'hiddenid', 'rName', 'rMaxRecords', 'bDescription', 'rSelectField', ]
+        },
         enquiry: {
             subtitle: 'ENQUIRYS',
             iconCls: 'x-fa fa-send',
             prefilled: [],
-            fillables: ['id', 'name', 'title', 'description', 'group_id', 'group', 'form_id', 'form', ],
+            fillables: ['id', 'name', 'title', 'description', 'form_id', 'form', ],
             createUrl: Xolens.module.enquiry.rsc.Api.enquiry.storeUrl,
             updateUrl: Xolens.module.enquiry.rsc.Api.enquiry.singleUrl,
-            fieldTypes: ['hiddentoken', 'hiddenid', 'rName', 'rTitle', 'bDescription', 'rSelectGroup', 'rSelectForm', ]
-        },
-        fieldvalue: {
-            subtitle: 'FIELDVALUES',
-            iconCls: 'x-fa fa-send',
-            prefilled: [],
-            fillables: ['id', 'section_field_id', 'section_field', ],
-            createUrl: Xolens.module.enquiry.rsc.Api.fieldvalue.storeUrl,
-            updateUrl: Xolens.module.enquiry.rsc.Api.fieldvalue.singleUrl,
-            fieldTypes: ['hiddentoken', 'hiddenid', 'rSelectSectionField', ]
+            fieldTypes: ['hiddentoken', 'hiddenid', 'rName', 'rTitle', 'bDescription', 'rSelectForm', ]
         },
         formsection: {
             subtitle: 'FORMSECTIONS',
@@ -90,15 +54,6 @@ Ext.define('Xolens.module.enquiry.rsc.Form', {
             createUrl: Xolens.module.enquiry.rsc.Api.formsection.storeUrl,
             updateUrl: Xolens.module.enquiry.rsc.Api.formsection.singleUrl,
             fieldTypes: ['hiddentoken', 'hiddenid', 'rPosition', 'rSelectSection', 'rSelectForm', ]
-        },
-        participantenquiry: {
-            subtitle: 'PARTICIPANTENQUIRYS',
-            iconCls: 'x-fa fa-send',
-            prefilled: [],
-            fillables: ['id', 'participant_id', 'participant', 'enquiry_id', 'enquiry', 'state', 'create_time', 'update_time', 'validation_time', ],
-            createUrl: Xolens.module.enquiry.rsc.Api.participantenquiry.storeUrl,
-            updateUrl: Xolens.module.enquiry.rsc.Api.participantenquiry.singleUrl,
-            fieldTypes: ['hiddentoken', 'hiddenid', 'rSelectParticipant', 'rSelectEnquiry', 'bState', 'rCreateTime', 'bUpdateTime', 'bValidationTime', ]
         },
         tablecolumn: {
             subtitle: 'TABLECOLUMNS',
@@ -117,6 +72,15 @@ Ext.define('Xolens.module.enquiry.rsc.Form', {
             createUrl: Xolens.module.enquiry.rsc.Api.sectionfield.storeUrl,
             updateUrl: Xolens.module.enquiry.rsc.Api.sectionfield.singleUrl,
             fieldTypes: ['hiddentoken', 'hiddenid', 'rPosition', 'rSelectField', 'rSelectSection', ]
+        },
+        fieldvalue: {
+            subtitle: 'FIELDVALUES',
+            iconCls: 'x-fa fa-send',
+            prefilled: [],
+            fillables: ['id', 'section_field_id', 'section_field', 'enquiry_id', 'enquiry', 'value', ],
+            createUrl: Xolens.module.enquiry.rsc.Api.fieldvalue.storeUrl,
+            updateUrl: Xolens.module.enquiry.rsc.Api.fieldvalue.singleUrl,
+            fieldTypes: ['hiddentoken', 'hiddenid', 'rSelectSectionField', 'rSelectEnquiry', 'bValue', ]
         },
 })
 
